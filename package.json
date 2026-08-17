@@ -1,0 +1,27 @@
+{
+  "name": "dsh-client-ui-tweakcn",
+  "version": "0.1.0",
+  "description": "DSH 客户端主题插件：把 tweakcn.com 导出的 shadcn/ui 主题配色映射为 DSH 的 --dsw-alias-* 语义 token（默认 Violet 紫罗兰），并提供「设置 → 通用 → tweakcn 主题」开关。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-theme"
+      ],
+      "immediately": true
+    }
+  },
+  "license": "MIT"
+}
